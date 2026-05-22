@@ -106,7 +106,14 @@ Behavioral testbench used for functional verification and simulation.
 - Xilinx Vivado
 - FPGA BRAM
 - Behavioral Simulation
+---
+## RTL Architecture
 
+![RTL](rtl_design.png)
+
+## Simulation Waveform
+
+![Waveform](sim.png)
 ---
 
 ## What I Learned
