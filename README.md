@@ -109,11 +109,11 @@ Behavioral testbench used for functional verification and simulation.
 ---
 ## RTL Architecture
 
-![RTL](rtl_design.png)
+![RTL](rtl/rtl_design.png)
 
 ## Simulation Waveform
 
-![Waveform](sim.png)
+![Waveform](tb/sim.png)
 ---
 
 ## What I Learned
