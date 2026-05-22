@@ -1,3 +1,6 @@
+![Banner](images/banner.png)
+---
+
 # Industrial True Dual Port RAM
 
 A Verilog HDL project focused on designing an industrial-style asynchronous True Dual Port RAM subsystem for FPGA-based systems.
