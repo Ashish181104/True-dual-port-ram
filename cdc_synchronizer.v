@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: MNNIT Allahabad
-// Engineer: Ashish Kumar Kashyap
+// college: MNNIT Allahabad
+// Ashish Kumar Kashyap
 // 
 // Create Date: 23.05.2026
 // Design Name: Industrial RAM Subsystem
