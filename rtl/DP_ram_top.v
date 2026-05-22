@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// college: MNNIT Allahabad
+// College: MNNIT Allahabad
 // Ashish Kumar Kashyap
 // 
 // Create Date: 23.05.2026
