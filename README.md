@@ -80,13 +80,13 @@ Industrial_True_Dual_Port_RAM/
 
 ## Module Description
 
-### `industrial_ram_top.v`
+### `DP_ram_top.v`
 Top-level module integrating all memory subsystem components together.
 
-### `true_dual_port_ram.v`
+### `true_ram.v`
 Core RAM module supporting simultaneous dual-port access.
 
-### `axi_style_interface.v`
+### `axi_interface.v`
 Implements a simple VALID/READY style communication interface inspired by industrial bus architectures.
 
 ### `collision_detector.v`
@@ -95,7 +95,7 @@ Detects simultaneous access conflicts when both ports target the same memory loc
 ### `cdc_synchronizer.v`
 Implements two-flop synchronizers for safer signal transfer across clock domains.
 
-### `tb_industrial_ram_top.v`
+### `tb_DP_ram_top.v`
 Behavioral testbench used for functional verification and simulation.
 
 ---
