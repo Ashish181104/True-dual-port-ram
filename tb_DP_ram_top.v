@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: MNNIT Allahabad
+// college: MNNIT Allahabad
 // Engineer: Ashish Kumar Kashyap
 // 
 // Create Date: 23.05.2026
