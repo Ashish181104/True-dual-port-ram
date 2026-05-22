@@ -119,7 +119,7 @@ Behavioral testbench used for functional verification and simulation.
 
 ![Waveform](images/sim.png)
 ---
-
+----
 ## What I Learned
 
 While building this project, I explored:
