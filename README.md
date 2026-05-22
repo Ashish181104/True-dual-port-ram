@@ -2,11 +2,13 @@
   <img src="images/banner.png" alt="Banner">
 </p>
 
-![Verilog](https://img.shields.io/badge/Language-Verilog-blue)
-![Vivado](https://img.shields.io/badge/Tool-Vivado-orange)
-![FPGA](https://img.shields.io/badge/Target-FPGA-green)
-![CDC](https://img.shields.io/badge/Design-CDC_Safe-red)
-![License](https://img.shields.io/badge/License-MIT-yellow)
+<p align="center">
+  <img src="https://img.shields.io/badge/Language-Verilog-blue">
+  <img src="https://img.shields.io/badge/Tool-Vivado-orange">
+  <img src="https://img.shields.io/badge/Target-FPGA-green">
+  <img src="https://img.shields.io/badge/Design-CDC_Safe-red">
+  <img src="https://img.shields.io/badge/License-MIT-yellow">
+</p>
 #  True Dual Port RAM
 
 A Verilog HDL project focused on designing an industrial-style asynchronous True Dual Port RAM subsystem for FPGA-based systems.
