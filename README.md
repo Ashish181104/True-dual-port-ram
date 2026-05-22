@@ -62,17 +62,17 @@ This project helps in understanding:
 ## Project Structure
 
 ```text
-Industrial_True_Dual_Port_RAM/
+True_Dual_Port_RAM/
 │
 ├── rtl/
-│   ├── industrial_ram_top.v
-│   ├── axi_style_interface.v
-│   ├── true_dual_port_ram.v
+│   ├── DP_ram_top.v
+│   ├── axi_interface.v
+│   ├── trueDP_ram.v
 │   ├── collision_detector.v
 │   └── cdc_synchronizer.v
 │
 ├── tb/
-│   └── tb_industrial_ram_top.v
+│   └── tb_DP_ram_top.v
 │
 ├── docs/
 ├── waveforms/
