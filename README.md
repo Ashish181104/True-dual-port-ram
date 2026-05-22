@@ -5,7 +5,18 @@ A Verilog HDL project focused on designing an industrial-style asynchronous True
 This project was built to understand how real-world memory architectures work inside modern digital systems and FPGA designs. Along with the RAM itself, the design also explores important concepts used in industry such as clock domain crossing (CDC), handshake-based communication, collision handling, and BRAM-friendly RTL coding.
 
 ---
+## Project Structure
 
+```text
+industrial-true-dual-port-ram
+│
+├── rtl
+├── tb
+├── images
+├── README.md
+├── LICENSE
+└── .gitignore
+```
 ## About the Project
 
 In many digital systems, multiple modules need to access memory at the same time. A True Dual Port RAM allows two independent ports to read and write simultaneously, making it useful for high-speed and parallel hardware systems.
