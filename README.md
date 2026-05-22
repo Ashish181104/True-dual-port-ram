@@ -83,7 +83,7 @@ Industrial_True_Dual_Port_RAM/
 ### `DP_ram_top.v`
 Top-level module integrating all memory subsystem components together.
 
-### `true_ram.v`
+### `trueDP_ram.v`
 Core RAM module supporting simultaneous dual-port access.
 
 ### `axi_interface.v`
