@@ -9,6 +9,8 @@
   <img src="https://img.shields.io/badge/Design-CDC_Safe-red">
   <img src="https://img.shields.io/badge/License-MIT-yellow">
 </p>
+
+----
 #  True Dual Port RAM
 
 A Verilog HDL project focused on designing an industrial-style asynchronous True Dual Port RAM subsystem for FPGA-based systems.
