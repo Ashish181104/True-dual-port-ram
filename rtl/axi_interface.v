@@ -10,7 +10,7 @@
 // Target Devices: Xilinx FPGA
 // Tool Versions: Vivado 2023.x
 // Description:
-//
+
 // AXI-style handshake interface.
 //
 // Features:
