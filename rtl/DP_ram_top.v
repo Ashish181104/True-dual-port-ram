@@ -2,7 +2,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 // College: MNNIT Allahabad
 // Ashish Kumar Kashyap
-// 
+
 // Create Date: 23.05.2026
 // Design Name: Industrial RAM Subsystem
 // Module Name: industrial_ram_top
