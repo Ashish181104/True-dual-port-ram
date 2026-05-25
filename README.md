@@ -10,8 +10,9 @@
   <img src="https://img.shields.io/badge/License-MIT-yellow">
 </p>
 
-----
-#  True Dual Port RAM
+---
+
+# True Dual Port RAM
 
 A Verilog HDL project focused on designing an industrial-style asynchronous True Dual Port RAM subsystem for FPGA-based systems.
 
@@ -119,20 +120,40 @@ Behavioral testbench used for functional verification and simulation.
 - Xilinx Vivado
 - FPGA BRAM
 - Behavioral Simulation
+
 ---
+
 ## RTL Architecture
-----
 
 ![RTL](images/rtl_design.png)
 
-----
+---
 
 ## Simulation Waveform
-----
 
 ![Waveform](images/sim.png)
+
 ---
-----
+
+## Collision Handling Policy
+
+The subsystem includes collision detection logic to identify simultaneous access conflicts during dual-port memory operation.
+
+Current collision handling features include:
+- Detection of same-address simultaneous access
+- Monitoring of concurrent read/write conditions
+- Collision indication during operation
+
+The current implementation focuses on collision detection and reporting. Future improvements may include:
+- write-first policy
+- read-first policy
+- no-change policy
+- arbitration-based conflict resolution
+
+This helps in understanding how industrial memory subsystems manage concurrent memory accesses safely and predictably.
+
+---
+
 ## What I Learned
 
 While building this project, I explored:
