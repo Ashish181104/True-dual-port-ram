@@ -1,76 +1,107 @@
-<p align="center">
+<div align="center">
   <img src="images/_banner.png" alt="Banner">
+</div>
+
+<div align="center">
+
+  <img src="https://img.shields.io/badge/Language-Verilog-blue" alt="Verilog">
+  <img src="https://img.shields.io/badge/Tool-Vivado-orange" alt="Vivado">
+  <img src="https://img.shields.io/badge/Target-FPGA-green" alt="FPGA">
+  <img src="https://img.shields.io/badge/Design-CDC_Safe-red" alt="CDC Safe">
+  <img src="https://img.shields.io/badge/License-MIT-yellow" alt="License">
+
+</div>
+
+<hr>
+
+<h1>True Dual Port RAM</h1>
+
+<p>
+A Verilog HDL project focused on designing an industrial-style asynchronous
+True Dual Port RAM subsystem for FPGA-based systems.
 </p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Language-Verilog-blue">
-  <img src="https://img.shields.io/badge/Tool-Vivado-orange">
-  <img src="https://img.shields.io/badge/Target-FPGA-green">
-  <img src="https://img.shields.io/badge/Design-CDC_Safe-red">
-  <img src="https://img.shields.io/badge/License-MIT-yellow">
+<p>
+This project was built to understand how real-world memory architectures work
+inside modern digital systems and FPGA designs. Along with the RAM itself,
+the design also explores important concepts used in industry such as
+Clock Domain Crossing (CDC), handshake-based communication,
+collision handling, and BRAM-friendly RTL coding.
 </p>
 
----
+<hr>
 
-# True Dual Port RAM
+<h2>About the Project</h2>
 
-A Verilog HDL project focused on designing an industrial-style asynchronous True Dual Port RAM subsystem for FPGA-based systems.
+<p>
+In many digital systems, multiple modules need to access memory at the same time.
+A True Dual Port RAM allows two independent ports to read and write simultaneously,
+making it useful for high-speed and parallel hardware systems.
+</p>
 
-This project was built to understand how real-world memory architectures work inside modern digital systems and FPGA designs. Along with the RAM itself, the design also explores important concepts used in industry such as clock domain crossing (CDC), handshake-based communication, collision handling, and BRAM-friendly RTL coding.
+<p>
+This project models that behavior using modular Verilog RTL and follows
+FPGA-oriented design practices compatible with Xilinx Vivado synthesis.
+</p>
 
----
-
-## About the Project
-
-In many digital systems, multiple modules need to access memory at the same time. A True Dual Port RAM allows two independent ports to read and write simultaneously, making it useful for high-speed and parallel hardware systems.
-
-This project models that behavior using modular Verilog RTL and follows FPGA-oriented design practices compatible with Xilinx Vivado synthesis.
-
+<p>
 The design also introduces practical engineering concepts like:
-- independent clock domains
-- metastability handling
-- synchronizer circuits
-- collision detection
-- modular RTL hierarchy
+</p>
 
-The goal of this project is not only to build RAM, but also to understand how industrial memory subsystems are designed step by step.
+<ul>
+  <li>Independent clock domains</li>
+  <li>Metastability handling</li>
+  <li>Synchronizer circuits</li>
+  <li>Collision detection</li>
+  <li>Modular RTL hierarchy</li>
+</ul>
 
----
+<p>
+The goal of this project is not only to build RAM,
+but also to understand how industrial memory subsystems
+are designed step by step.
+</p>
 
-## Features
+<hr>
 
-- True Dual Port RAM architecture
-- Independent read/write ports
-- Asynchronous clock support
-- CDC-safe synchronizers
-- VALID/READY style interface
-- Collision detection logic
-- Vivado-compatible BRAM inference
-- Modular Verilog design
-- Simulation-ready testbench
+<h2>Features</h2>
 
----
+<ul>
+  <li>True Dual Port RAM architecture</li>
+  <li>Independent read/write ports</li>
+  <li>Asynchronous clock support</li>
+  <li>CDC-safe synchronizers</li>
+  <li>VALID/READY style interface</li>
+  <li>Collision detection logic</li>
+  <li>Vivado-compatible BRAM inference</li>
+  <li>Modular Verilog design</li>
+  <li>Simulation-ready testbench</li>
+</ul>
 
-## Concepts Covered
+<hr>
 
-This project helps in understanding:
+<h2>Concepts Covered</h2>
 
-- Memory fundamentals
-- Single-port vs dual-port RAM
-- True dual-port RAM operation
-- FPGA BRAM architecture
-- Clock Domain Crossing (CDC)
-- Metastability
-- Two-flop synchronizers
-- Industrial RTL design methodology
-- Collision handling
-- FPGA-friendly coding style
+<p>This project helps in understanding:</p>
 
----
+<ul>
+  <li>Memory fundamentals</li>
+  <li>Single-port vs dual-port RAM</li>
+  <li>True dual-port RAM operation</li>
+  <li>FPGA BRAM architecture</li>
+  <li>Clock Domain Crossing (CDC)</li>
+  <li>Metastability</li>
+  <li>Two-flop synchronizers</li>
+  <li>Industrial RTL design methodology</li>
+  <li>Collision handling</li>
+  <li>FPGA-friendly coding style</li>
+</ul>
 
-## Project Structure
+<hr>
 
-```text
+<h2>Project Structure</h2>
+
+<pre>
 True_Dual_Port_RAM/
 │
 ├── rtl/
@@ -88,107 +119,160 @@ True_Dual_Port_RAM/
 │
 ├── README.md
 └── LICENSE
-```
+</pre>
 
----
+<hr>
 
-## Module Description
+<h2>Module Description</h2>
 
-### `DP_ram_top.v`
+<h3><code>DP_ram_top.v</code></h3>
+<p>
 Top-level module integrating all memory subsystem components together.
+</p>
 
-### `trueDP_ram.v`
+<h3><code>trueDP_ram.v</code></h3>
+<p>
 Core RAM module supporting simultaneous dual-port access.
+</p>
 
-### `axi_interface.v`
-Implements a simple VALID/READY style communication interface inspired by industrial bus architectures.
+<h3><code>axi_interface.v</code></h3>
+<p>
+Implements a simple VALID/READY style communication interface
+inspired by industrial bus architectures.
+</p>
 
-### `collision_detector.v`
-Detects simultaneous access conflicts when both ports target the same memory location.
+<h3><code>collision_detector.v</code></h3>
+<p>
+Detects simultaneous access conflicts when both ports
+target the same memory location.
+</p>
 
-### `cdc_synchronizer.v`
-Implements two-flop synchronizers for safer signal transfer across clock domains.
+<h3><code>cdc_synchronizer.v</code></h3>
+<p>
+Implements two-flop synchronizers for safer signal transfer
+across clock domains.
+</p>
 
-### `tb_DP_ram_top.v`
+<h3><code>tb_DP_ram_top.v</code></h3>
+<p>
 Behavioral testbench used for functional verification and simulation.
+</p>
 
----
+<hr>
 
-## Tools Used
+<h2>Tools Used</h2>
 
-- Verilog HDL
-- Xilinx Vivado
-- FPGA BRAM
-- Behavioral Simulation
+<ul>
+  <li>Verilog HDL</li>
+  <li>Xilinx Vivado</li>
+  <li>FPGA BRAM</li>
+  <li>Behavioral Simulation</li>
+</ul>
 
----
+<hr>
 
-## RTL Architecture
+<h2>RTL Architecture</h2>
 
-![RTL](images/rtl_design.png)
+<div align="center">
+  <img src="images/rtl_design.png" alt="RTL Architecture">
+</div>
 
----
+<hr>
 
-## Simulation Waveform
+<h2>Simulation Waveform</h2>
 
-![Waveform](images/sim.png)
+<div align="center">
+  <img src="images/sim.png" alt="Simulation Waveform">
+</div>
 
----
+<hr>
 
-## Collision Handling Policy
+<h2>Collision Handling Policy</h2>
 
-The subsystem includes collision detection logic to identify simultaneous access conflicts during dual-port memory operation.
+<p>
+The subsystem includes collision detection logic to identify
+simultaneous access conflicts during dual-port memory operation.
+</p>
 
+<p>
 Current collision handling features include:
-- Detection of same-address simultaneous access
-- Monitoring of concurrent read/write conditions
-- Collision indication during operation
+</p>
 
-The current implementation focuses on collision detection and reporting. Future improvements may include:
-- write-first policy
-- read-first policy
-- no-change policy
-- arbitration-based conflict resolution
+<ul>
+  <li>Detection of same-address simultaneous access</li>
+  <li>Monitoring of concurrent read/write conditions</li>
+  <li>Collision indication during operation</li>
+</ul>
 
-This helps in understanding how industrial memory subsystems manage concurrent memory accesses safely and predictably.
+<p>
+The current implementation focuses on collision detection and reporting.
+Future improvements may include:
+</p>
 
----
+<ul>
+  <li>Write-first policy</li>
+  <li>Read-first policy</li>
+  <li>No-change policy</li>
+  <li>Arbitration-based conflict resolution</li>
+</ul>
 
-## What I Learned
+<p>
+This helps in understanding how industrial memory subsystems manage
+concurrent memory accesses safely and predictably.
+</p>
 
+<hr>
+
+<h2>What I Learned</h2>
+
+<p>
 While building this project, I explored:
-- how FPGA memories are modeled in Verilog
-- how asynchronous clock domains create challenges
-- why CDC handling is important
-- how dual-port architectures improve parallelism
-- how modular RTL design is used in industry
+</p>
 
-This project also helped me better understand how larger systems such as FIFOs, AXI-based subsystems, and memory controllers are built internally.
+<ul>
+  <li>How FPGA memories are modeled in Verilog</li>
+  <li>How asynchronous clock domains create challenges</li>
+  <li>Why CDC handling is important</li>
+  <li>How dual-port architectures improve parallelism</li>
+  <li>How modular RTL design is used in industry</li>
+</ul>
 
----
+<p>
+This project also helped me better understand how larger systems such as
+FIFOs, AXI-based subsystems, and memory controllers are built internally.
+</p>
 
-## Future Improvements
+<hr>
 
-Some planned future additions are:
+<h2>Future Improvements</h2>
 
-- Asynchronous FIFO implementation
-- AXI4 interface support
-- Arbitration logic
-- ECC (Error Correction Code)
-- Built-In Self-Test (BIST)
-- Parameterized RAM sizing
-- Burst transfer support
+<p>Some planned future additions are:</p>
 
----
+<ul>
+  <li>Asynchronous FIFO implementation</li>
+  <li>AXI4 interface support</li>
+  <li>Arbitration logic</li>
+  <li>ECC (Error Correction Code)</li>
+  <li>Built-In Self-Test (BIST)</li>
+  <li>Parameterized RAM sizing</li>
+  <li>Burst transfer support</li>
+</ul>
 
-## Author
+<hr>
 
-Ashish Kumar Kashyap  
-B.Tech Electronics & Communication Engineering  
+<h2>Author</h2>
+
+<p>
+Ashish Kumar Kashyap<br>
+B.Tech Electronics &amp; Communication Engineering<br>
 MNNIT Allahabad
+</p>
 
----
+<hr>
 
-## License
+<h2>License</h2>
 
-This project is released under the MIT License for educational and learning purposes.
+<p>
+This project is released under the MIT License
+for educational and learning purposes.
+</p>
