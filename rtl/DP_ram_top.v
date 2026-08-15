@@ -21,63 +21,37 @@
 // Revision 0.01 - File Created
 //
 //////////////////////////////////////////////////////////////////////////////////
-module industrial_ram_top #
 
-(
+module industrial_ram_top #(
     parameter DATA_WIDTH = 32,
     parameter DEPTH      = 1024
-)
-
-(
+)(
     input clk_a,
     input rst_a,
 
     input clk_b,
     input rst_b,
 
-
-
-   
-    // PORT A
-  
-
+    // Port A
     input valid_a,
     input we_a,
-
     input [$clog2(DEPTH)-1:0] addr_a,
     input [DATA_WIDTH-1:0] din_a,
 
     output [DATA_WIDTH-1:0] dout_a,
     output ready_a,
 
-
-
-    
-    // PORT B
-
-
+    // Port B
     input valid_b,
     input we_b,
-
     input [$clog2(DEPTH)-1:0] addr_b,
     input [DATA_WIDTH-1:0] din_b,
 
     output [DATA_WIDTH-1:0] dout_b,
     output ready_b,
 
-
-
-    
-    // STATUS
-   
-
     output collision_flag
 );
-
-
-
-
-// INTERNAL SIGNALS
 
 wire we_a_pipe;
 wire we_b_pipe;
@@ -88,30 +62,16 @@ wire [$clog2(DEPTH)-1:0] addr_b_pipe;
 wire [DATA_WIDTH-1:0] din_a_pipe;
 wire [DATA_WIDTH-1:0] din_b_pipe;
 
-
-
 wire collision_raw;
-
 wire collision_sync_a;
 wire collision_sync_b;
 
 
-
-
-
-// INTERFACE BLOCK
-
-
-axi_style_interface #
-
-(
+// Handshake interface
+handshake_interface #(
     .DATA_WIDTH(DATA_WIDTH),
     .DEPTH(DEPTH)
-)
-
-interface_block
-
-(
+) interface_block (
     .clk_a(clk_a),
     .rst_a(rst_a),
 
@@ -120,13 +80,11 @@ interface_block
 
     .valid_a(valid_a),
     .we_a(we_a),
-
     .addr_a(addr_a),
     .din_a(din_a),
 
     .valid_b(valid_b),
     .we_b(we_b),
-
     .addr_b(addr_b),
     .din_b(din_b),
 
@@ -144,21 +102,10 @@ interface_block
 );
 
 
-
-
-
-// COLLISION DETECTOR
-
-
-collision_detector #
-
-(
+// Collision detector
+collision_detector #(
     .DEPTH(DEPTH)
-)
-
-collision_block
-
-(
+) collision_block (
     .we_a(we_a_pipe),
     .we_b(we_b_pipe),
 
@@ -169,52 +116,27 @@ collision_block
 );
 
 
-
-
-
-// CDC SYNCHRONIZERS
-
-
-cdc_synchronizer sync_collision_a
-(
+// CDC synchronizers
+cdc_synchronizer sync_collision_a (
     .clk(clk_a),
     .rst(rst_a),
-
     .async_signal(collision_raw),
-
     .sync_signal(collision_sync_a)
 );
 
-
-
-
-cdc_synchronizer sync_collision_b
-(
+cdc_synchronizer sync_collision_b (
     .clk(clk_b),
     .rst(rst_b),
-
     .async_signal(collision_raw),
-
     .sync_signal(collision_sync_b)
 );
 
 
-
-
-
-// MEMORY BLOCK
-
-
-true_dual_port_ram #
-
-(
+// Memory
+true_dual_port_ram #(
     .DATA_WIDTH(DATA_WIDTH),
     .DEPTH(DEPTH)
-)
-
-memory_block
-
-(
+) memory_block (
     .clk_a(clk_a),
     .clk_b(clk_b),
 
@@ -230,13 +152,6 @@ memory_block
     .dout_a(dout_a),
     .dout_b(dout_b)
 );
-
-
-
-
-
-// STATUS
-
 
 assign collision_flag = collision_sync_a | collision_sync_b;
 
