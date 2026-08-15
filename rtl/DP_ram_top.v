@@ -12,7 +12,7 @@
 // Description:
 //
 // Top module integrating:
-// - AXI-style interface
+// - handshake -style interface
 // - True dual-port RAM
 // - Collision detector
 // - CDC synchronizers
