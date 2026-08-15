@@ -71,7 +71,7 @@ are designed step by step.
   <li>Independent read/write ports</li>
   <li>Asynchronous clock support</li>
   <li>CDC-safe synchronizers</li>
-  <li>VALID/READY style interface</li>
+  <li>VALID/READY handshake interface</li>
   <li>Collision detection logic</li>
   <li>Vivado-compatible BRAM inference</li>
   <li>Modular Verilog design</li>
@@ -106,7 +106,7 @@ True_Dual_Port_RAM/
 │
 ├── rtl/
 │   ├── DP_ram_top.v
-│   ├── axi_interface.v
+│   ├── handshake_interface.v
 │   ├── trueDP_ram.v
 │   ├── collision_detector.v
 │   └── cdc_synchronizer.v
@@ -135,10 +135,10 @@ Top-level module integrating all memory subsystem components together.
 Core RAM module supporting simultaneous dual-port access.
 </p>
 
-<h3><code>axi_interface.v</code></h3>
+<h3><code>handshake_interface.v</code></h3>
 <p>
-Implements a simple VALID/READY style communication interface
-inspired by industrial bus architectures.
+Implements a simple VALID/READY handshake interface
+for reliable communication between the input logic and memory subsystem.
 </p>
 
 <h3><code>collision_detector.v</code></h3>
