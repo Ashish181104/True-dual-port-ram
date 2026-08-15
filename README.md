@@ -14,7 +14,7 @@
 
 <hr>
 
-<h1>True Dual Port RAM</h1>
+<h1>Dual Port RAM</h1>
 
 <p>
 A Verilog HDL project focused on designing an industrial-style asynchronous
