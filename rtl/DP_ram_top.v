@@ -140,7 +140,7 @@ true_dual_port_ram #(
     .clk_a(clk_a),
     .clk_b(clk_b),
 
-    .we_a(we_a_pipe & ~collision_sync_a),
+    .we_a(we_a_pipe),
     .we_b(we_b_pipe & ~collision_sync_b),
 
     .addr_a(addr_a_pipe),
